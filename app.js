@@ -1,8 +1,14 @@
 // retrive data with d3
 
 
-// horizontal bar chart with dropdown menufor top 10 OTUs. otu_ids = barchart labels / otu labels hovertext
-
+// horizontal bar chart with dropdown menu for top 10 OTUs. otu_ids = barchart labels / otu labels hovertext
+var trace = {
+    x: sample_values,
+    y: otu_ids,
+    text: otu_labels,
+    type: "bar",
+    orientation: "h",
+};
 
 // bubble chart. otu_ids = x AND marker colors / sample_values = y AND marker size / otu_labels = text values
 
