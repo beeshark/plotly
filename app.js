@@ -15,6 +15,11 @@ var trace = {
     orientation: "h",
 };
 
+var dropdownMenu = d3.select("#selDataset");
+var dataset = dropdownMenu.property("value");
+// ?????
+
+
 // bubble chart. otu_ids = x AND marker colors / sample_values = y AND marker size / otu_labels = text values
 
 
