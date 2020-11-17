@@ -1,5 +1,10 @@
-// retrive data with d3
 
+
+// retrive data with d3
+const url = "data/samples.json"
+d3.json(url).then(function(data) {
+    console.log(data);
+  });
 
 // horizontal bar chart with dropdown menu for top 10 OTUs. otu_ids = barchart labels / otu labels hovertext
 var trace = {
