@@ -7,7 +7,7 @@ d3.json(url).then(function(data) {
   });
 
 // horizontal bar chart with dropdown menu for top 10 OTUs. otu_ids = barchart labels / otu labels hovertext
-var trace = {
+var horz = {
     x: sample_values,
     y: otu_ids,
     text: otu_labels,
@@ -21,9 +21,19 @@ var dataset = dropdownMenu.property("value");
 
 
 // bubble chart. otu_ids = x AND marker colors / sample_values = y AND marker size / otu_labels = text values
+var bubble = {
+    x: samples.otu_ids,
+    y: samples.sample_values,
+    mode: "markers",
+    text: sample.otu_labels,
+    marker:{
+        size: samples.sample_values,
+        color: samples.otu_ids
+    }
 
+}
 
-// display cample metadata ex) indv demographic info
+// display sample metadata ex) indv demographic info
 
 
 // display each key value pair from the metadata json object somewhere
