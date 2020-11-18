@@ -62,8 +62,28 @@ Plotly.newPlot("bubble", data1, layout1)
 
 // display each key value pair from the metadata json object somewhere
 
-
+function init() {
+    var selector = d3.select("#selDataset");
+    d3.json("/names").then((sampleNames) => {
+      // console.log(sampleNames);
+      sampleNames.forEach((sample) => {
+        selector
+          .append("option", sample)
+          .text(sample)
+          .property("value", sample);
+      });
+      const firstSample = sampleNames[0];
+      buildPlots(firstSample);
+      buildMetadata(firstSample);
+    });
+  }
 
 // update all of the plots any time that a new sample is selected
+
+function optionChanged(newSample) {
+    buildPlots(newSample);
+    buildMetadata(newSample);
+  }
+
 init()
 })}}
