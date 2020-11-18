@@ -3,14 +3,15 @@
 // retrive data with d3
 var samples = "data/samples.json"
 
-function buildMetadata(sample){
-    console.log(sample)
+function buildMetadata(id){
+    console.log(id)
 d3.json(path).then(function(data) {
     console.log(data);
   });
 
 
- function buildPlots(id)
+ function buildPlots(id){
+     d3.json(samples).then(function(data){
 
 // horizontal bar chart with dropdown menu for top 10 OTUs. otu_ids = barchart labels / otu labels hovertext
 var horz = {
@@ -28,13 +29,13 @@ var dataset = dropdownMenu.property("value");
 
 // bubble chart. otu_ids = x AND marker colors / sample_values = y AND marker size / otu_labels = text values
 var bubble = {
-    x: sample.otu_ids,
-    y: sample.sample_values,
+    x: samples.otu_ids,
+    y: samples.sample_values,
     mode: "markers",
-    text: sample.otu_labels,
+    text: samples.otu_labels,
     marker:{
-        size: sample.sample_values,
-        color: sample.otu_ids
+        size: samples.sample_values,
+        color: samples.otu_ids
     }
 
 }
@@ -46,5 +47,5 @@ var bubble = {
 
 
 // update all of the plots any time that a new sample is selected
-
-}
+init()
+})}}
