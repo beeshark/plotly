@@ -23,23 +23,36 @@ var horz = {
     orientation: "h",
 };
 
+var data = [trace];
+var layout ={
+    title: "Top 10 OTUs",
+    yaxis: {
+        type: "category"
+    }
+}
+
 var dropdownMenu = d3.select("#selDataset");
 var dataset = dropdownMenu.property("value");
 // ?????
 
+Plotly.newPlot("bar", data, layout)
+
 
 // bubble chart. otu_ids = x AND marker colors / sample_values = y AND marker size / otu_labels = text values
-var bubble = {
-    x: samples.otu_ids,
-    y: samples.sample_values,
+var data2 = {
+    x: ,
+    y: ,
     mode: "markers",
     text: samples.otu_labels,
     marker:{
         size: samples.sample_values,
         color: samples.otu_ids
-    }
+    };
+var layout
 
 }
+
+Plotly.newPlot("bubble", data2, layout2)
 
 // display sample metadata ex) indv demographic info
 
