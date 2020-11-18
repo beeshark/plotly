@@ -57,6 +57,8 @@ Plotly.newPlot("bubble", data1, layout1)
 
 // bonus?
 
+
+
 // display sample metadata ex) indv demographic info
 
 
