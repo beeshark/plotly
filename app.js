@@ -39,25 +39,29 @@ Plotly.newPlot("bar", data, layout)
 
 
 // bubble chart. otu_ids = x AND marker colors / sample_values = y AND marker size / otu_labels = text values
-var data2 = {
-    x: ,
-    y: ,
+var data1 = {
+    x: data.otu_ids,
+    y: data.sample_values,
     mode: "markers",
-    text: samples.otu_labels,
+    text: data.otu_labels,
     marker:{
-        size: samples.sample_values,
-        color: samples.otu_ids
+        size: data.sample_values,
+        color: data.otu_ids
+    }
+};
+var layout1 = {
+    xaxis: {title: "OTU ID"}
     };
-var layout
 
-}
+Plotly.newPlot("bubble", data1, layout1)
 
-Plotly.newPlot("bubble", data2, layout2)
+// bonus?
 
 // display sample metadata ex) indv demographic info
 
 
 // display each key value pair from the metadata json object somewhere
+
 
 
 // update all of the plots any time that a new sample is selected
