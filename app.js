@@ -5,8 +5,9 @@ var samples = "data/samples.json"
 
 function buildMetadata(id){
     console.log(id)
-d3.json(path).then(function(data) {
+d3.json(path).then(data => {
     console.log(data);
+    d3.select("#sample-metadata").html("");
   });
 
 
